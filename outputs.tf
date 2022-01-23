@@ -36,7 +36,7 @@ variable "sample2" {
 variable "sample3" {
   default = true
 }
-
+# list varaible type
 variable "samplex" {
   default = [
     "Hello",
@@ -45,6 +45,7 @@ variable "samplex" {
     "World"
   ]
 }
+# map varaible type
 
 variable "sampley" {
   default = {
