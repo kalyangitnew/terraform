@@ -1,6 +1,6 @@
 resource "aws_spot_instance_request" "cheap_worker" {
   count         = length(var.components)
-  ami           = "data.aws_ami.ami.id"
+  ami           = data.aws_ami.ami.id
   instance_type = "t2.micro"
   vpc_security_group_ids = ["sg-0db1f455d56fb942d"]
 
