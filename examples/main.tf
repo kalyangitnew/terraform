@@ -37,3 +37,11 @@ resource "aws_instance" "web" {
     Name = "Sample"
   }
 }
+
+terraform {
+  backend "s3" {
+    bucket = "terraform-practice"
+    key    = "example/sample/terraform.tfstate"
+    region = "us-east-1"
+  }
+}
