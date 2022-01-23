@@ -6,14 +6,14 @@ resource "aws_spot_instance_request" "cheap_worker" {
   wait_for_fulfillment = true
 
   tags = {
-    Name = element(var.components,count.index)
+    Name = element(var.components, count.index)
   }
 }
 resource "aws_ec2_tag" "tags" {
   count       = length(var.components)
   key         = element(aws_spot_instance_request.cheap_worker.*.spot_instance_id, count.index)
   resource_id = "Name"
-  value       = "element(var.components,count.index)"
+  value       = "element(var.components, count.index)"
 }
 data "aws_ami" "ami" {
   most_recent = true
