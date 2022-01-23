@@ -9,6 +9,7 @@ resource "aws_security_group" "allow_sample" {
     protocol         = "tcp"
     cidr_blocks      = ["0.0.0.0/0"]
     ipv6_cidr_blocks = []
+    self = false
   }
 
   egress {
@@ -17,6 +18,7 @@ resource "aws_security_group" "allow_sample" {
     protocol         = "-1"
     cidr_blocks      = ["0.0.0.0/0"]
     ipv6_cidr_blocks = ["::/0"]
+    self = false
   }
 
   tags = {

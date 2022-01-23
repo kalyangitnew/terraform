@@ -7,4 +7,5 @@ resource "aws_instance" "sample" {
     Name = "sample"
   }
 }
-variable "SGID" {}
+variable "SGID" {
+}
