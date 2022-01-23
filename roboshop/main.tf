@@ -10,7 +10,7 @@ resource "aws_spot_instance_request" "cheap_worker" {
 }
 data "aws_ami" "ami" {
   most_recent = true
-  name_regex  = "^Centos*"
+  name_regex  = "^Cent*"
   owners      = ["973714476881"]
 }
 variable "components" {
