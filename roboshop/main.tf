@@ -37,7 +37,7 @@ resource "null_resource" "ansible" {
     }
     inline = [
       "sudo yum install python3-pip -y",
-      "sudo pip3 install pip --upgrade -y",
+      "sudo pip3 install pip --upgrade",
       "sudo pip3 install ansible",
       "ansible-pull -U https://DevOps-Batches@dev.azure.com/DevOps-Batches/DevOps60/_git/ansible roboshop-pull.yml -e COMPONENT=${element(var.components, count.index)} -e ENV=dev"
     ]
